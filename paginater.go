@@ -45,7 +45,7 @@ func (p *Paginater) IsFirst() bool {
 
 // ShowFirst returns true if should show the first page.
 func (p *Paginater) ShowFirst() bool {
-	return p.current > getMiddleIdx(p.numPages)-1
+	return p.current > getMiddleIdx(p.numPages)
 }
 
 // HasPrevious returns true if there is a previous page relative to current page.
@@ -82,7 +82,7 @@ func (p *Paginater) IsLast() bool {
 
 // ShowLast returns true if should show the last page.
 func (p *Paginater) ShowLast() bool {
-	return p.current < p.numPages-getMiddleIdx(p.numPages)
+	return p.current < p.TotalPages()-getMiddleIdx(p.numPages)
 }
 
 // Total returns number of total rows.
