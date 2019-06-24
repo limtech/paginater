@@ -35,6 +35,7 @@ func main() {
 {{if not .Page.IsFirst}}[First](1){{end}}
 {{if .Page.HasPrevious}}[Previous]({{.Page.Previous}}){{end}}
 
+{{if .Page.ShowFirst}}[First(1)]{{end}}
 {{range .Page.Pages}}
 	{{if eq .Num -1}}
 	...
@@ -42,6 +43,7 @@ func main() {
 	{{.Num}}{{if .IsCurrent}}(current){{end}}
 	{{end}}
 {{end}}
+{{if .Page.ShowLast}}[Last]{{.Page.TotalPages}}{{end}}
 
 {{if .Page.HasNext}}[Next]({{.Page.Next}}){{end}}
 {{if not .Page.IsLast}}[Last]({{.Page.TotalPages}}){{end}}
