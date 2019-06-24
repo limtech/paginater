@@ -82,7 +82,7 @@ func (p *Paginater) IsLast() bool {
 
 // ShowLast returns true if should show the last page.
 func (p *Paginater) ShowLast() bool {
-	return p.current < p.TotalPages()-getMiddleIdx(p.numPages)
+	return p.current < p.TotalPages()-getMiddleIdx(p.numPages)-1
 }
 
 // Total returns number of total rows.
